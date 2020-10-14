@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_discover">
+
+    <fragment
+        android:id="@+id/navigation_discover"
+        android:name="com.baroque.lujo.activities.ui.discover.DiscoverFragment"
+        android:label="@string/title_discover"
+        tools:layout="@layout/fragment_discover" />
+
+    <fragment
+        android:id="@+id/navigation_dining"
+        android:name="com.baroque.lujo.activities.ui.dining.DiningFragment"
+        android:label="@string/title_dining"
+        tools:layout="@layout/fragment_dining" />
+
+    <fragment
+        android:id="@+id/navigation_chat"
+        android:name="com.baroque.lujo.activities.ui.chat.ChatFragment"
+        android:label="@string/title_chat"
+        tools:layout="@layout/fragment_chat" />
+
+    <fragment
+        android:id="@+id/navigation_aviation"
+        android:name="com.baroque.lujo.activities.ui.aviation.AviationFragment"
+        android:label="@string/title_aviation"
+        tools:layout="@layout/fragment_aviation" />
+
+    <fragment
+        android:id="@+id/navigation_my_bookings"
+        android:name="com.baroque.lujo.activities.ui.mybookings.MyBookingsFragment"
+        android:label="@string/title_my_bookings"
+        tools:layout="@layout/fragment_my_bookings" />
+</navigation>

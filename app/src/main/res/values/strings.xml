@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Lujo</string>
+    <string name="a_world_of_infinite_possibilities">A World of Infinite Possibilities</string>
+    <string name="support_email">support@golujo.com</string>
+    <string name="title_activity_countries">Select Country</string>
+    <string name="failure">"Request could not be addressed. Please retry later."</string>
+    <string name="general_error">"Some error occurred at server, Please retry later."</string>
+    <string name="title_activity_otp">Verify Request</string>
+    <string name="do_you_have_any_issue">Do you have any issue?</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_dining">Dining</string>
+    <string name="title_chat">Chat</string>
+    <string name="title_aviation">Aviation</string>
+    <string name="title_my_bookings">Bookings</string>
+    <string name="title_activity_my_account">My Account</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="invite_a_friend">"I N V I T E   A   F R I E N D"</string> <!--My booking is getting cut when selected-->
+</resources>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
+<!--    <data>-->
+<!--        <variable-->
+<!--            name="viewModel"-->
+<!--            type="login.LoginViewModel" />-->
+<!--    </data>-->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activities.WelcomeActivity"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_weight="1"
+                >
+
+                <ImageView
+                    android:id="@+id/splashscreen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="Welcome"
+                    android:textColor ="@color/white"
+                    android:layout_marginTop ="30dp"
+                    android:textSize ="@dimen/medium_text"
+                    android:textStyle ="normal"
+                    />
+
+                <TextView
+                    android:id="@+id/tvFirstAndSecondName"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="LUJO Member"
+                    android:textColor ="@color/white"
+                    android:textSize ="17sp"
+                    android:textStyle ="normal"
+                    />
+
+
+
+            </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llAnimations"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            >
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginBottom="40dp"
+                >
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="-5dp"
+                    >
+                    <ImageView
+                        android:id="@+id/imgWine"
+                        android:layout_width="65dp"
+                        android:layout_height="109dp"
+                        android:src="@drawable/wine_image"
+                        android:layout_gravity="center_horizontal"
+                        android:visibility="invisible"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imgSports"
+                        android:layout_width="94dp"
+                        android:layout_height="88dp"
+                        android:src="@drawable/sports_image"
+                        android:visibility="invisible"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="40dp"
+                    >
+
+                    <ImageView
+                        android:id="@+id/imgTravel"
+                        android:layout_width="94dp"
+                        android:layout_height="98dp"
+                        android:src="@drawable/travel_image"
+                        android:visibility="invisible"
+                        />
+
+                    <ImageView
+                        android:id="@+id/imgAviation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="124dp"
+                        android:src="@drawable/aviation_image"
+                        android:layout_gravity="right"
+                        android:visibility="invisible"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:layout_marginRight="-20dp"
+                    >
+                    <ImageView
+                        android:id="@+id/imgFood"
+                        android:layout_width="wrap_content"
+                        android:layout_height="109dp"
+                        android:src="@drawable/food_image"
+                        android:visibility="invisible"
+                        />
+                    <ImageView
+                        android:id="@+id/imgWatch"
+                        android:layout_width="82dp"
+                        android:layout_height="124dp"
+                        android:src="@drawable/watch_image"
+                        android:visibility="invisible"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnNext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/dark_action_button_bg_shape"
+                android:textColor="@color/white"
+                android:text="N E X T"
+                android:layout_gravity="center|bottom"
+                android:layout_weight="0"
+                android:layout_margin="20dp"
+                android:enabled="false"
+                />
+
+        </LinearLayout>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

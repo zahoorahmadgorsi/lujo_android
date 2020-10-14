@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+    <color name="darkOrange">#E98864</color>
+    <color name="lightOrange">#FFC0A2</color>
+    <color name="lightGrey">#8D8C8C</color>
+    <color name="verylightGrey">#262626</color>
+    <color name="darkGrey">#333333</color>
+<!--    not used-->
+    <color name="cursorAccent">#FFC0A2</color>
+    <color name="controlNormal">#FFC0A2</color>
+    <color name="controlActivated">#FFC0A2</color>
+</resources>

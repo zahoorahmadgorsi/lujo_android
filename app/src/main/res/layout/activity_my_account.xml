@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.baroque.lujo.activities.my_account.MyAccountViewModel" />
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@{viewModel.user.fullName}"
+                android:textColor ="@color/white"
+                android:layout_margin = "@dimen/big_margin"
+                android:textSize ="@dimen/medium_text"
+                android:textStyle ="normal"
+                />
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                app:cardCornerRadius="50dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                app:cardBackgroundColor="@android:color/transparent"
+                app:cardElevation="1dp"
+                >
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="fitCenter"
+                    app:imageUri="@{viewModel.user.avatar}"
+                    />
+            </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:textSize="@dimen/small_text"
+                android:textStyle="normal"
+                android:text="Change Profile Photo"
+                android:textColor="@color/white"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/verylightGrey" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_margin = "@dimen/big_margin">
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/membership_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop = "@dimen/small_margin"
+                    android:text="Membership"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/small_text"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/verylightGrey" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "@dimen/big_margin"
+                android:text="@{String.valueOf((int)viewModel.user.points)}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/double_big_text"
+                android:textStyle="normal" />
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="LUJO Credits"
+                android:layout_marginTop= "@dimen/small_margin"
+                android:textColor ="@color/lightGrey"
+                android:textSize ="@dimen/small_text"
+                android:textStyle ="normal"
+                />
+
+            <Button
+                android:id="@+id/btnInvite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop= "@dimen/big_margin"
+                android:layout_marginLeft="80dp"
+                android:layout_marginRight="80dp"
+                android:layout_marginBottom = "@dimen/big_margin"
+                android:background="@drawable/action_button_bg_shape"
+                android:textSize="@dimen/small_text"
+                android:textStyle="normal"
+                android:text="@string/invite_a_friend" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/verylightGrey" />
+
+            <Button
+                android:id="@+id/btnEditProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:textSize="@dimen/small_text"
+                android:textStyle="normal"
+                android:text="EDIT PROFILE"
+                android:textColor="@color/lightGrey"/>
+
+            <Button
+                android:id="@+id/btnSignOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                android:textSize="@dimen/small_text"
+                android:textStyle="normal"
+                android:text="LOG OUT"
+                android:textColor="@color/lightGrey"/>
+
+        </LinearLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
