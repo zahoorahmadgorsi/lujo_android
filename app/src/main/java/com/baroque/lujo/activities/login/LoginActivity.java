@@ -107,6 +107,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         saveObjectToSharedPreference(LoginActivity.this, PREF_FILE_NAME, KEY_CURRENT_USER, user);
                         //Show a toast message that OTP has been Resent
                         Toast.makeText(LoginActivity.this, "Profile Updated Successfully", Toast.LENGTH_SHORT).show();
+                        setResult(RESULT_OK, intent);   // because to edit profile this activity was loaded with startActivityForResult
                         finish();//it will just move to previous activity which was my account
                     }
                 }else if (userSignUpResponse.status == ERROR){

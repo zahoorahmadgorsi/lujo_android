@@ -59,6 +59,7 @@ public class CountriesActivity extends AppCompatActivity implements CountryAdapt
                 }
             }
         });
+
         binding.getViewModel().getIsBusy().observe(this, new Observer<Boolean>() {
             @Override
             public void onChanged(Boolean aBoolean) {

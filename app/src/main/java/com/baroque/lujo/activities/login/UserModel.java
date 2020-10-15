@@ -1,5 +1,7 @@
 package com.baroque.lujo.activities.login;
 
+import android.graphics.Bitmap;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;

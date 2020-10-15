@@ -177,8 +177,8 @@ public class LoginViewModel extends AndroidViewModel {
                 loginRepository.changePhoneNumber(user.getOldPhonePrefix() ,user.getOldPhoneNumber(), user.getPhonePrefix(), user.getPhoneNumber());
                 break;
             case EDIT_PROFILE:
-                TokenAndExpiry tokenAndExpiry = getSavedObjectFromPreference(getApplication(),PREF_FILE_NAME,KEY_TOKEN_EXPIRY, TokenAndExpiry.class);
                 user =  new UserModel(userFirstName.getValue(), userLastName.getValue(), userEmail.getValue(), userPhonePrefix.getValue(), userPhoneNumber.getValue(),"","","");
+                TokenAndExpiry tokenAndExpiry = getSavedObjectFromPreference(getApplication(),PREF_FILE_NAME,KEY_TOKEN_EXPIRY, TokenAndExpiry.class);
                 if (isInputValid(user) && tokenAndExpiry !=null) {
                     loginRepository.editProfile(user.getFirstName(), user.getLastName(),user.getEmail(), user.getPhonePrefix(), user.getPhoneNumber(),tokenAndExpiry.getToken());
                 }

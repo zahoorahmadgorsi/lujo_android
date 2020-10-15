@@ -253,7 +253,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="@dimen/big_margin"
-                        android:textSize="@dimen/medium_text"
+                        android:textSize="@dimen/small_text"
                         android:textStyle="normal"
                         android:text="N E X T   S T E P"
                         android:textColor="@drawable/text_color"

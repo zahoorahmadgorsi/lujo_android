@@ -173,6 +173,8 @@
                 android:layout_weight="0"
                 android:layout_margin="20dp"
                 android:enabled="false"
+                android:textSize="@dimen/small_text"
+                android:textStyle="normal"
                 />
 
         </LinearLayout>

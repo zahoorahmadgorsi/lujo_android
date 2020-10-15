@@ -22,8 +22,8 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public class ApiInterface {
-    public static final String BaseUrl = "http://api-stage.golujo.com/v1/"; //staging
-//  public static final String BaseUrl = "https://api.golujo.com/v1/"; //production
+//    public static final String BaseUrl = "http://api-stage.golujo.com/v1/"; //staging
+  public static final String BaseUrl = "https://api.golujo.com/v1/"; //production
 
     private static GetServices getServices = null;
 
@@ -123,6 +123,13 @@ public class ApiInterface {
                 @Field("phone_prefix") String phone_prefix,
                 @Field("phone") String phone,
                  @Field("token") String token
+        );
+
+        @FormUrlEncoded //(Required to use @Field parameter)
+        @POST("/users/avatar")
+        Call<GenericResponse> upLoadAvatar(
+                @Field("avatar") String avatar,
+                @Field("token") String token
         );
 
 //        @GET("stateM/{country_id}")

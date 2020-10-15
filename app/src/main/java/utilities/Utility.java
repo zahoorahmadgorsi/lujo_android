@@ -3,7 +3,9 @@ package utilities;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.view.Gravity;
 import android.widget.Toast;
 
@@ -12,6 +14,7 @@ import androidx.appcompat.app.AlertDialog;
 import com.baroque.lujo.R;
 import com.google.gson.Gson;
 
+import java.io.ByteArrayOutputStream;
 import java.lang.reflect.Type;
 
 public class Utility {
@@ -72,6 +75,15 @@ public class Utility {
     public static void clearSharedPreference(Context context, String preferenceFileName){
         SharedPreferences sharedPreferences = context.getSharedPreferences(preferenceFileName, 0);
         sharedPreferences.edit().clear().apply();
+    }
+
+    public static String bitmapTobase64(Bitmap image) {
+        Bitmap immagex=image;
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        immagex.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] b = baos.toByteArray();
+        String imageEncoded = Base64.encodeToString(b,Base64.DEFAULT);
+        return imageEncoded;
     }
 
 }

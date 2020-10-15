@@ -80,6 +80,8 @@
                     android:background="@drawable/dark_action_button_bg_shape"
                     android:textColor="@color/white"
                     android:text="J O I N   L U J O"
+                    android:textSize="@dimen/small_text"
+                    android:textStyle="normal"
                     />
 
             </LinearLayout>

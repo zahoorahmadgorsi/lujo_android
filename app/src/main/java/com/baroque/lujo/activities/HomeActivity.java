@@ -3,17 +3,20 @@ package com.baroque.lujo.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.widget.Toolbar;
 
 import com.baroque.lujo.R;
+import com.baroque.lujo.activities.login.UserModel;
 import com.baroque.lujo.activities.my_account.MyAccountActivity;
 import com.baroque.lujo.activities.ui.aviation.AviationFragment;
 import com.baroque.lujo.activities.ui.chat.ChatFragment;
 import com.baroque.lujo.activities.ui.dining.DiningFragment;
 import com.baroque.lujo.activities.ui.discover.DiscoverFragment;
 import com.baroque.lujo.activities.ui.mybookings.MyBookingsFragment;
+import com.bumptech.glide.Glide;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -23,9 +26,16 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import static utilities.Constants.PREF_FILE_NAME;
+import static utilities.Key.KEY_CURRENT_USER;
+import static utilities.Utility.getSavedObjectFromPreference;
+
 public class HomeActivity extends AppCompatActivity implements View.OnClickListener{
 
     Toolbar toolbar;
+    ImageView imgUser, imgSearch;
+    UserModel user;
+
     public void setToolbarTitle(String toolbarTitle) {
         TextView mTitle = (TextView) toolbar.findViewById(R.id.toolbar_title);
         mTitle.setText(toolbarTitle);
@@ -51,11 +61,22 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
                 .build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         //Toolbar imageViews on click listener
-        toolbar.findViewById(R.id.imgUser).setOnClickListener(this);
-        toolbar.findViewById(R.id.imgSearch).setOnClickListener(this);
+        imgUser = toolbar.findViewById(R.id.imgUser);
+        imgUser.setOnClickListener(this);
+        imgSearch = toolbar.findViewById(R.id.imgSearch);
+        imgSearch.setOnClickListener(this);
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        //reloading user object
+        user = getSavedObjectFromPreference(getApplication(),PREF_FILE_NAME,KEY_CURRENT_USER,UserModel.class);
+        Glide.with(HomeActivity.this)
+                .load(user.getAvatar())
+                .placeholder(R.drawable.ic_placeholder)
+                .into(imgUser);
+    }
     @Override
     public void onBackPressed() {
         //disabling back button
