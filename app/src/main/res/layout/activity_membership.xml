@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.my_account.MembershipActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/llBottom"
+
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:layout_margin="@dimen/big_margin"
+            >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCreditCards"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:orientation="horizontal"
+                android:scrollbars="none"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_membership" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal"
+                android:layout_margin = "@dimen/very_big_margin">
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="-"
+                    android:textColor ="@color/white"
+                    android:textSize="@dimen/small_text"
+                    android:textStyle ="normal"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/tvPageNumber"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="1"
+                    android:layout_marginLeft="@dimen/small_margin"
+                    android:textColor ="@color/white"
+                    android:textSize="@dimen/small_text"
+                    android:textStyle ="normal"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="|"
+                    android:layout_marginLeft="@dimen/small_margin"
+                    android:layout_marginRight="@dimen/small_margin"
+                    android:textColor ="@color/lightGrey"
+                    android:textSize="@dimen/small_text"
+                    android:textStyle ="normal"
+                    android:gravity="center"
+                    />
+
+                <TextView
+                    android:id="@+id/tvTotalPages"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="2"
+                    android:textColor ="@color/white"
+                    android:textSize="@dimen/small_text"
+                    android:textStyle ="normal"
+                    android:gravity="center"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="Membership benefits:"
+                android:textColor ="@color/white"
+                android:textSize="@dimen/medium_text"
+                android:textStyle ="bold"
+                />
+
+            <LinearLayout
+                android:id="@+id/llExclusive"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "@dimen/medium_margin"
+                >
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_margin="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/exclusive"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/tick_black"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        />
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft = "@dimen/small_margin"
+                    >
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Exclusive events and experiences"
+                        android:textColor ="@color/white"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle="normal"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Hand-picked for those who want to experience the very best in life"
+                        android:textColor ="@color/lightGrey"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle ="normal"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llLuxuryGoods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "@dimen/medium_margin"
+                >
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_margin="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/luxury_goods"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/tick_black"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        />
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft = "@dimen/small_margin"
+                    >
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Luxury and fine goods"
+                        android:textColor ="@color/white"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle="normal"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="The finest and best goods on the planet sourced for you and your loved ones"
+                        android:textColor ="@color/lightGrey"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle ="normal"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/llHotelsAndVillas"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "@dimen/medium_margin"
+                >
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_margin="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/hotels_villas"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/tick_black"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        />
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft = "@dimen/small_margin"
+                    >
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Hotels and villas"
+                        android:textColor ="@color/white"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle="normal"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Discounted hotel prices and spectacular villas wherever you are in the world"
+                        android:textColor ="@color/lightGrey"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle ="normal"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "@dimen/medium_margin"
+                >
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_margin="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/dining_inactive"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/tick_black"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        />
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft = "@dimen/small_margin"
+                    >
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Selection of world’s best dining spots"
+                        android:textColor ="@color/white"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle="normal"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Be welcomed like beloved guest through our curated network of the finest places to dine"
+                        android:textColor ="@color/lightGrey"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle ="normal"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "@dimen/medium_margin"
+                >
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_margin="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/aviation_inactive"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/tick_black"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        />
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft = "@dimen/small_margin"
+                    >
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="On-demand private jets"
+                        android:textColor ="@color/white"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle="normal"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="A global fleet of more than 7000 aircraft at your fingertips"
+                        android:textColor ="@color/lightGrey"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle ="normal"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop = "@dimen/medium_margin"
+                android:layout_marginBottom="@dimen/very_big_margin"
+                >
+
+                <RelativeLayout
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_margin="@dimen/small_margin">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/chat_icon"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        />
+
+                    <ImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:src="@drawable/tick_black"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        />
+
+
+                </RelativeLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft = "@dimen/small_margin"
+                    >
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="24/7 chat support by our agents"
+                        android:textColor ="@color/white"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle="normal"
+                        />
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Highly trained and experienced concierge agents will accommodate your every wish"
+                        android:textColor ="@color/lightGrey"
+                        android:textSize="@dimen/small_text"
+                        android:textStyle ="normal"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+    <LinearLayout
+        android:id="@+id/llBottom"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center|bottom"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_alignParentBottom="true"
+        android:background="@color/verylightGrey"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/darkGrey"
+            android:padding="@dimen/big_margin"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:layout_gravity="center_vertical"
+
+                >
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tick_orange"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center_vertical"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="$2,000"
+                    android:layout_marginLeft="@dimen/small_margin"
+                    android:layout_marginRight="@dimen/medium_margin"
+                    android:textColor ="@color/white"
+                    android:textSize="@dimen/big_text"
+                    android:textStyle="normal"
+                    />
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:text="/ YEAR"
+                    android:textColor ="@color/white"
+                    android:textSize="@dimen/small_text"
+                    android:textStyle="normal"
+
+                    android:layout_gravity="center_vertical"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
+                android:background="@color/darkOrange"
+                android:layout_margin="@dimen/medium_margin"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:gravity="right"
+                >
+
+                <EditText
+                    android:id="@+id/txtReferralCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:hint="Referral Code"
+                    android:maxLines="1"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/lightGrey"
+                    android:background="@drawable/edit_text"
+                    android:textSize="@dimen/medium_text"
+                    android:gravity="right"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnPayNow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/action_button_bg_shape"
+            android:text="P A Y   N O W"
+            android:textSize="@dimen/small_text"
+            android:textStyle="normal"
+            android:layout_marginTop="@dimen/medium_margin"
+            android:layout_marginLeft="@dimen/big_margin"
+            android:layout_marginRight="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

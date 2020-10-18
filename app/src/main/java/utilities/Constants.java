@@ -1,5 +1,11 @@
 package utilities;
 
+import com.baroque.lujo.activities.login.UserModel;
+import com.baroque.lujo.activities.my_account.MyAccountActivity;
+
+import static utilities.Key.KEY_CURRENT_USER;
+import static utilities.Utility.saveObjectToSharedPreference;
+
 public final class Constants {
     public static String ACTION_TO_PERFORM = "SignInOrSignUp";
     public static String INTENT_FIRST_PARAM = "IntentFirstParameter";
@@ -11,5 +17,5 @@ public final class Constants {
     //Country Code
     public static final int COUNTRY_CODE_US = 238;
     public static int SPLASH_SCREEN_TIME_OUT = 1 ; //1 second
-
+    public enum MemberShipPlan{Dining,All}
 }

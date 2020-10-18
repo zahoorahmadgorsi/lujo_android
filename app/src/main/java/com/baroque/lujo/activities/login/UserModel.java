@@ -140,54 +140,53 @@ public class UserModel implements Serializable {
         return user;
     }
 
+    public class MembershipPlan implements Serializable{
+        public int getId() {
+            return id;
+        }
 
+        public void setId(int id) {
+            this.id = id;
+        }
+
+        public String getPlan() {
+            return plan;
+        }
+
+        public void setPlan(String plan) {
+            this.plan = plan;
+        }
+
+        public String getPrice() {
+            return price;
+        }
+
+        public void setPrice(String price) {
+            this.price = price;
+        }
+
+        public String getTarget() {
+            return target;
+        }
+
+        public void setTarget(String target) {
+            this.target = target;
+        }
+
+        public String getExpiration() {
+            return expiration;
+        }
+
+        public void setExpiration(String expiration) {
+            this.expiration = expiration;
+        }
+
+        public int id;
+        private String plan;
+        private String price;
+        private String target;
+        private String expiration;
+    }
 
 }
 
-class MembershipPlan implements Serializable{
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getPlan() {
-        return plan;
-    }
-
-    public void setPlan(String plan) {
-        this.plan = plan;
-    }
-
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
-    public String getTarget() {
-        return target;
-    }
-
-    public void setTarget(String target) {
-        this.target = target;
-    }
-
-    public String getExpiration() {
-        return expiration;
-    }
-
-    public void setExpiration(String expiration) {
-        this.expiration = expiration;
-    }
-
-    public int id;
-    private String plan;
-    private String price;
-    private String target;
-    private String expiration;
-}

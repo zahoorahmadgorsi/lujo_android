@@ -13,13 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activities.my_account.MembershipActivity"
+            android:label="@string/title_activity_for_non_members" />
         <activity
             android:name=".activities.my_account.MyAccountActivity"
-            android:label="@string/title_activity_my_account"
-            ></activity>
+            android:label="@string/title_activity_my_account" />
         <activity
             android:name=".activities.HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".activities.WelcomeActivity"
             android:noHistory="true"

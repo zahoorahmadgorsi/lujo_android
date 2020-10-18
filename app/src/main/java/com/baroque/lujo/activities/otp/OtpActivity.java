@@ -61,31 +61,6 @@ public class OtpActivity extends AppCompatActivity implements View.OnClickListen
         user = (UserModel)intent.getSerializableExtra(INTENT_FIRST_PARAM);
         binding.getViewModel().setUser(user);
 
-        //Observing response of OTP Verification in case of signup
-//        viewModel.getOTPVerificationResponse().observe(this, new Observer<Resource<GenericResponse>>() {
-//            @Override
-//            public void onChanged(Resource<GenericResponse> userSignUpResponse) {
-//                if (userSignUpResponse.status == SUCCESS){
-//                    //Saving signed up user into shared preference
-//                    saveObjectToSharedPreference(OtpActivity.this, PREF_FILE_NAME, KEY_CURRENT_USER, user);
-//                    //Navigate to Welcome screen;
-//                    Intent intent = new Intent(OtpActivity.this, WelcomeActivity.class);
-//                    intent.putExtra(ACTION_TO_PERFORM, pageType);   //page type will contain signup incase of signup and signin in case of signin
-//                    intent.putExtra(INTENT_FIRST_PARAM, user);
-//                    startActivity(intent);
-//                    finish(); // no need of this activity as user has already gone to welcome activity
-//                }else if (userSignUpResponse.status == ERROR){
-//                    String errorMessage = getResources().getString(R.string.general_error);
-//                    if (userSignUpResponse.data != null){
-//                        errorMessage = userSignUpResponse.data.getContent().toString();
-//                    }else if ( !TextUtils.isEmpty(userSignUpResponse.message )){
-//                        errorMessage = userSignUpResponse.message;
-//                    }
-//                    Utility.showalert(OtpActivity.this,"Error",errorMessage,"Dismiss");
-//                }
-//            }
-//        });
-
         //Nested API calls
         //Observing response of OTP Verification in case of signIn/Signup
         viewModel.getOTPVerificationResponse().observe(this, new Observer<Resource<GenericResponse>>() {

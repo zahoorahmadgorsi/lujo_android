@@ -74,7 +74,7 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         user = getSavedObjectFromPreference(getApplication(),PREF_FILE_NAME,KEY_CURRENT_USER,UserModel.class);
         Glide.with(HomeActivity.this)
                 .load(user.getAvatar())
-                .placeholder(R.drawable.ic_placeholder)
+                .placeholder(R.drawable.user_icon)
                 .into(imgUser);
     }
     @Override

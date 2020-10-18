@@ -22,8 +22,8 @@ import retrofit2.http.POST;
 import retrofit2.http.Query;
 
 public class ApiInterface {
-//    public static final String BaseUrl = "http://api-stage.golujo.com/v1/"; //staging
-  public static final String BaseUrl = "https://api.golujo.com/v1/"; //production
+    public static final String BaseUrl = "http://api-stage.golujo.com/v1/"; //staging
+//  public static final String BaseUrl = "https://api.golujo.com/v1/"; //production
 
     private static GetServices getServices = null;
 

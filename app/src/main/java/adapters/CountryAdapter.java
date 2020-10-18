@@ -40,15 +40,6 @@ public class CountryAdapter extends RecyclerView.Adapter<CountryAdapter.ViewHold
         this.dataCopy.addAll(this.data);
     }
 
-//    public void addCountries( List<CountryModel> countries){
-//        this.data = countries;
-//        if (dataCopy == null)  {
-//            dataCopy = new ArrayList<>();
-//        }
-//        this.dataCopy.addAll(this.data);
-//        notifyDataSetChanged();
-//    }
-
     public void setOnItemClickListener(OnItemClickListener clickListener) {
         this.clickListener = clickListener;
     }

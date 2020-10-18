@@ -74,6 +74,7 @@ public class MyAccountActivity extends AppCompatActivity implements View.OnClick
         binding.setViewModel(viewModel);           //use this incase of live data
         //Setting on click listeners
         binding.btnChangeProfilePhoto.setOnClickListener(this);
+        binding.llMembership.setOnClickListener(this);
         binding.btnEditProfile.setOnClickListener(this);
         binding.btnInvite.setOnClickListener(this);
         binding.btnSignOut.setOnClickListener(this);
@@ -154,6 +155,10 @@ public class MyAccountActivity extends AppCompatActivity implements View.OnClick
             case R.id.btnChangeProfilePhoto:
                 Intent pickPhoto = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(pickPhoto , SELECT_A_PHOTO);
+                break;
+            case R.id.llMembership:
+                intent = new Intent(MyAccountActivity.this, MembershipActivity.class);
+                startActivity(intent);
                 break;
         }
     }

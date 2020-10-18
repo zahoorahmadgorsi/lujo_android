@@ -69,6 +69,7 @@
                 android:background="@color/verylightGrey" />
 
             <LinearLayout
+                android:id="@+id/llMembership"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
