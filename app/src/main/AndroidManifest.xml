@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".activities.my_account.MembershipActivity"
-            android:label="@string/title_activity_for_non_members" />
+            android:label="@string/title_purchase_membership" />
         <activity
             android:name=".activities.my_account.MyAccountActivity"
             android:label="@string/title_activity_my_account" />
@@ -22,7 +22,7 @@
             android:name=".activities.HomeActivity"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activities.WelcomeActivity"
+            android:name=".activities.login.WelcomeActivity"
             android:noHistory="true"
             android:theme="@style/FullscreenTheme" />
         <activity
@@ -39,7 +39,7 @@
             android:name=".activities.login.LoginActivity"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".activities.PreLoginActivity"
+            android:name=".activities.login.PreLoginActivity"
             android:theme="@style/FullscreenTheme" />
         <activity
             android:name=".activities.SplashActivity"

@@ -1,4 +1,4 @@
-package com.baroque.lujo.activities;
+package com.baroque.lujo.activities.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 
 import com.baroque.lujo.R;
-import com.baroque.lujo.activities.login.LoginActivity;
 import com.baroque.lujo.databinding.ActivityPreLoginBinding;
 
 import java.util.Timer;

@@ -1,46 +1,32 @@
 package com.baroque.lujo.activities.my_account;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
 
 import com.baroque.lujo.activities.SplashActivity;
-import com.baroque.lujo.activities.WelcomeActivity;
-import com.baroque.lujo.activities.country.CountriesActivity;
-import com.baroque.lujo.activities.country.CountryModel;
 import com.baroque.lujo.activities.login.LoginActivity;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
 
 import com.baroque.lujo.R;
-import com.baroque.lujo.activities.login.LoginViewModel;
 import com.baroque.lujo.activities.login.UserModel;
-import com.baroque.lujo.activities.otp.OtpActivity;
 import com.baroque.lujo.databinding.ActivityMyAccountBinding;
 import com.bumptech.glide.Glide;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.util.List;
 
 import model.api_response.GenericResponse;
 import utilities.Constants;
@@ -48,7 +34,6 @@ import utilities.Resource;
 import utilities.Utility;
 
 import static utilities.Constants.ACTION_TO_PERFORM;
-import static utilities.Constants.INTENT_FIRST_PARAM;
 import static utilities.Constants.PREF_FILE_NAME;
 import static utilities.Key.KEY_CURRENT_USER;
 import static utilities.Resource.Status.ERROR;
@@ -158,6 +143,7 @@ public class MyAccountActivity extends AppCompatActivity implements View.OnClick
                 break;
             case R.id.llMembership:
                 intent = new Intent(MyAccountActivity.this, MembershipActivity.class);
+                intent.putExtra(ACTION_TO_PERFORM, Constants.MEMBERSHIP_PAGE_TYPE.NOT_UPGRADE); //
                 startActivity(intent);
                 break;
         }

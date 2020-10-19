@@ -4,14 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.baroque.lujo.activities.login.LoginActivity;
-import com.baroque.lujo.activities.WelcomeActivity;
+import com.baroque.lujo.activities.login.WelcomeActivity;
 import com.baroque.lujo.databinding.ActivityOtpBinding;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.text.Editable;
 import android.text.TextUtils;

@@ -1,4 +1,4 @@
-package com.baroque.lujo.activities;
+package com.baroque.lujo.activities.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
@@ -11,9 +11,9 @@ import android.os.Looper;
 import android.view.View;
 
 import com.baroque.lujo.R;
+import com.baroque.lujo.activities.HomeActivity;
 import com.baroque.lujo.databinding.ActivityWelcomeBinding;
 
-import com.baroque.lujo.activities.login.UserModel;
 import utilities.Constants;
 
 import static utilities.Constants.INTENT_FIRST_PARAM;

@@ -1,8 +1,6 @@
 package adapters;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,17 +8,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.baroque.lujo.R;
-import com.baroque.lujo.activities.country.CountryModel;
 import com.baroque.lujo.activities.my_account.CreditCard;
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.CustomTarget;
-import com.bumptech.glide.request.transition.Transition;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MembershipAdapter extends RecyclerView.Adapter<MembershipAdapter.ViewHolder> {
@@ -51,6 +43,7 @@ public class MembershipAdapter extends RecyclerView.Adapter<MembershipAdapter.Vi
     public void onBindViewHolder(@NonNull final MembershipAdapter.ViewHolder viewHolder, int i) {
         int resID = data.get(i).imageId;
         viewHolder.imgCreditCard.setImageResource(resID);
+        viewHolder.tvUserName.setText(data.get(i).userName);
     }
 
     @Override
@@ -58,28 +51,15 @@ public class MembershipAdapter extends RecyclerView.Adapter<MembershipAdapter.Vi
         return data.size();
     }
 
-//    public void filter(String text) {
-//        data.clear();
-//        if(text.isEmpty()){
-//            data.addAll(dataCopy);
-//        } else{
-//            text = text.toLowerCase();
-//            for(CountryModel item: dataCopy){
-//                if(item.getCountry().toLowerCase().contains(text) || item.getPhonePrefix().toLowerCase().contains(text)){
-//                    data.add(item);
-//                }
-//            }
-//        }
-//        notifyDataSetChanged();
-//    }
-
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private ImageView imgCreditCard;
+        private TextView tvUserName;
 
         private ViewHolder(View view) {
             super(view);
             imgCreditCard = view.findViewById(R.id.imgCreditCard);
+            tvUserName = view.findViewById(R.id.tvUserName);
             view.setOnClickListener(this);
         }
 
@@ -94,10 +74,8 @@ public class MembershipAdapter extends RecyclerView.Adapter<MembershipAdapter.Vi
     }
 
     public interface OnItemClickListener {
-
         void onItemClick(int position, CreditCard data);
     }
-
 
 }
 

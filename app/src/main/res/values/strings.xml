@@ -13,7 +13,8 @@
     <string name="title_aviation">Aviation</string>
     <string name="title_my_bookings">Bookings</string>
     <string name="title_activity_my_account">My Account</string>
-    <string name="title_activity_for_non_members">Purchase Membership</string>
-    <string name="title_activity_for_members">Membership Overview</string>
+    <string name="title_purchase_membership">Purchase Membership</string>
+    <string name="title_membersship_overview">Membership Overview</string>
+    <string name="title_membersship_upgrade">Membership Upgrade</string>
     <string name="invite_a_friend">"I N V I T E   A   F R I E N D"</string> <!--My booking is getting cut when selected-->
 </resources>

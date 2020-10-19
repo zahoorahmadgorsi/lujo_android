@@ -9,7 +9,10 @@ import android.os.Looper;
 
 import com.baroque.lujo.R;
 
+import com.baroque.lujo.activities.login.PreLoginActivity;
 import com.baroque.lujo.activities.login.UserModel;
+import com.baroque.lujo.activities.login.WelcomeActivity;
+
 import utilities.Constants;
 
 import static utilities.Constants.ACTION_TO_PERFORM;

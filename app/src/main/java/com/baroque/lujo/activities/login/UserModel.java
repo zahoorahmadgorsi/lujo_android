@@ -150,7 +150,7 @@ public class UserModel implements Serializable {
         }
 
         public String getPlan() {
-            return plan;
+            return plan == null ? "" : plan;
         }
 
         public void setPlan(String plan) {

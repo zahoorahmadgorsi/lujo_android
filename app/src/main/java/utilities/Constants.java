@@ -13,9 +13,17 @@ public final class Constants {
     public static String COUNTRY = "COUNTRY";
     public static String PREF_FILE_NAME = "LUJO";
     public static enum PAGE_TYPE{ SIGN_UP , SIGN_IN, CHANGE_PHONE_NUMBER, EDIT_PROFILE} ;
+    public enum MEMBERSHIP_TYPE {
+        FREE,
+        DINING,
+        ALL_ACCESS
+    }
+    public enum MEMBERSHIP_PAGE_TYPE {
+        UPGRADE,
+        NOT_UPGRADE
+    }
     public static String URL_TERMS_AND_CONDITIONS = "http://golujo.com/tos/";
     //Country Code
     public static final int COUNTRY_CODE_US = 238;
     public static int SPLASH_SCREEN_TIME_OUT = 1 ; //1 second
-    public enum MemberShipPlan{Dining,All}
 }
