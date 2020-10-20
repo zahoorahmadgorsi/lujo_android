@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:scrollbars="none"
+                android:layout_marginTop="@dimen/big_margin"
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 tools:listitem="@layout/item_membership" />
 
@@ -101,7 +102,7 @@
                 android:text="Membership benefits:"
                 android:textColor ="@color/white"
                 android:textSize="@dimen/medium_text"
-                android:textStyle ="bold"
+                android:textStyle ="normal"
                 android:layout_marginTop="@dimen/big_margin"
                 />
 
@@ -122,7 +123,7 @@
                             xmlns:android="http://schemas.android.com/apk/res/android"
                             android:layout_width="28dp"
                             android:layout_height="28dp"
-                            android:layout_margin="@dimen/small_margin">
+                            >
 
                             <ImageView
                                 android:layout_width="20dp"
@@ -182,7 +183,7 @@
                             xmlns:android="http://schemas.android.com/apk/res/android"
                             android:layout_width="28dp"
                             android:layout_height="28dp"
-                            android:layout_margin="@dimen/small_margin">
+                            >
 
                             <ImageView
                                 android:layout_width="20dp"
@@ -241,7 +242,7 @@
                             xmlns:android="http://schemas.android.com/apk/res/android"
                             android:layout_width="28dp"
                             android:layout_height="28dp"
-                            android:layout_margin="@dimen/small_margin">
+                            >
 
                             <ImageView
                                 android:layout_width="20dp"
@@ -303,7 +304,7 @@
                     <RelativeLayout
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:layout_margin="@dimen/small_margin">
+                        >
 
                         <ImageView
                             android:layout_width="20dp"
@@ -361,7 +362,7 @@
                         xmlns:android="http://schemas.android.com/apk/res/android"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:layout_margin="@dimen/small_margin">
+                        >
 
                         <ImageView
                             android:layout_width="20dp"
@@ -419,7 +420,7 @@
                         xmlns:android="http://schemas.android.com/apk/res/android"
                         android:layout_width="28dp"
                         android:layout_height="28dp"
-                        android:layout_margin="@dimen/small_margin">
+                        >
 
                         <ImageView
                             android:layout_width="20dp"
@@ -541,7 +542,7 @@
                     android:layout_height="wrap_content"
                     android:layout_width="wrap_content"
                     android:text="/ YEAR"
-                    android:textColor ="@color/white"
+                    android:textColor ="@color/lightGrey"
                     android:textSize="@dimen/small_text"
                     android:textStyle="normal"
 

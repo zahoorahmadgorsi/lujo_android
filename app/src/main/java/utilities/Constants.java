@@ -16,7 +16,7 @@ public final class Constants {
     public enum MEMBERSHIP_TYPE {
         FREE,
         DINING,
-        ALL_ACCESS
+        ALL
     }
     public enum MEMBERSHIP_PAGE_TYPE {
         UPGRADE,

@@ -6,12 +6,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.LinearSnapHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Rect;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
@@ -25,18 +24,22 @@ import java.util.ArrayList;
 import adapters.MembershipAdapter;
 import utilities.Constants;
 
+import static utilities.Constants.ACTION_TO_PERFORM;
 import static utilities.Constants.PREF_FILE_NAME;
 import static utilities.Key.KEY_CURRENT_USER;
 import static utilities.Utility.getSavedObjectFromPreference;
 
-public class MembershipActivity extends AppCompatActivity implements MembershipAdapter.OnItemClickListener {
+public class MembershipActivity extends AppCompatActivity implements MembershipAdapter.OnItemClickListener,View.OnClickListener {
     private MembershipAdapter membershipAdapter;
     RecyclerView recyclerView;
     UserModel currentUser;
     LinearSnapHelper snapHelper = new LinearSnapHelper();
-    private int snapPosition = RecyclerView.NO_POSITION;
+    private int snapPosition = RecyclerView.SCROLLBAR_POSITION_DEFAULT;
     ArrayList<CreditCard> data= new ArrayList<>();  //credit cards data
     LinearLayout llNonDiningFeatures;
+    Button btnPayNow;
+
+
 
     //we only wish to know what the final snap position is (i.e. When scroll state becomes idle)?
     enum Behavior {
@@ -63,15 +66,32 @@ public class MembershipActivity extends AppCompatActivity implements MembershipA
 
         if (currentUser.getMembershipPlan() == null || currentUser.getMembershipPlan().getPlan().equals("")){
             membership_type = Constants.MEMBERSHIP_TYPE.FREE;
-        }else if (currentUser.getMembershipPlan().getPlan() == Constants.MEMBERSHIP_TYPE.DINING.toString()){
+        }else if (currentUser.getMembershipPlan().getPlan().equalsIgnoreCase(Constants.MEMBERSHIP_TYPE.DINING.toString())  ){
             membership_type = Constants.MEMBERSHIP_TYPE.DINING;
         }
-        else if (currentUser.getMembershipPlan().getPlan() == Constants.MEMBERSHIP_TYPE.ALL_ACCESS.toString()){
-            membership_type = Constants.MEMBERSHIP_TYPE.ALL_ACCESS;
+        else if (currentUser.getMembershipPlan().getPlan().equalsIgnoreCase(Constants.MEMBERSHIP_TYPE.ALL.toString()) ){
+            membership_type = Constants.MEMBERSHIP_TYPE.ALL;
         }
         updateUIByMembership();
         //read this method description
         updateRecyclerView();
+        btnPayNow = findViewById(R.id.btnPayNow);
+        btnPayNow.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.btnPayNow:
+                Intent intent = new Intent(MembershipActivity.this, MembershipActivity.class);
+                if (membershipPageType == Constants.MEMBERSHIP_PAGE_TYPE.NOT_UPGRADE) {
+                    intent.putExtra(ACTION_TO_PERFORM, Constants.MEMBERSHIP_PAGE_TYPE.UPGRADE);
+                    startActivity(intent);
+                }
+                break;
+            case R.id.btnSignUp:
+                break;
+        }
     }
 
     private void updateUIByMembership(){
@@ -83,8 +103,6 @@ public class MembershipActivity extends AppCompatActivity implements MembershipA
         Button btnPayNow = findViewById(R.id.btnPayNow);
         TextView tvFees = findViewById(R.id.tvFees);
         LinearLayout llBottom = findViewById(R.id.llBottom);
-
-
 
 
         if (this.membership_type == Constants.MEMBERSHIP_TYPE.FREE){
@@ -120,7 +138,7 @@ public class MembershipActivity extends AppCompatActivity implements MembershipA
             viewRefferalVerticalLine.setVisibility(View.GONE);
             llReferral.setVisibility(View.GONE);
         }
-        else if (this.membership_type == Constants.MEMBERSHIP_TYPE.ALL_ACCESS){
+        else if (this.membership_type == Constants.MEMBERSHIP_TYPE.ALL){
             getSupportActionBar().setTitle(getString(R.string.title_membersship_overview));
             //Setting credit card data
             data.add(new CreditCard( R.drawable.cc_all_access, currentUser.getFullName()));
@@ -135,7 +153,26 @@ public class MembershipActivity extends AppCompatActivity implements MembershipA
     public void onItemClick(int position, CreditCard data) {
         recyclerView.scrollToPosition(position);
         this.snapPosition = position;   //setting the snapPostion due to click
-        maybeNotifySnapPositionChange(recyclerView);
+
+//      1.  First scroll RecyclerView to make target item visible.
+//      2.  Than, take the object of target View and use SnapHelper to determine distance for the final snap.
+//      3.  Finally scroll to target position.
+
+        RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
+        recyclerView.scrollToPosition(position);
+        recyclerView.post(() -> {
+            View view = layoutManager.findViewByPosition(position);
+            if (view == null) {
+                Log.e("MemberShipActivity", "Cant find target View for initial Snap");
+                return;
+            }
+
+            int[] snapDistance = snapHelper.calculateDistanceToFinalSnap(layoutManager, view);
+            if (snapDistance[0] != 0 || snapDistance[1] != 0) {
+                recyclerView.scrollBy(snapDistance[0], snapDistance[1]);
+                maybeNotifySnapPositionChange(recyclerView,position);
+            }
+        });
     }
 
 
@@ -174,7 +211,8 @@ public class MembershipActivity extends AppCompatActivity implements MembershipA
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);
                 if (newState == RecyclerView.SCROLL_STATE_IDLE ) {
-                    maybeNotifySnapPositionChange(recyclerView);
+                    int currentSnapPosition = getSnapPosition(recyclerView);
+                    maybeNotifySnapPositionChange(recyclerView,currentSnapPosition);
                 }
             }
         });
@@ -199,12 +237,12 @@ public class MembershipActivity extends AppCompatActivity implements MembershipA
         return snapPosition;
     }
 
-    public void maybeNotifySnapPositionChange(@NonNull RecyclerView recyclerView) {
-        int currentSnapPosition = getSnapPosition(recyclerView);
+    public void maybeNotifySnapPositionChange(@NonNull RecyclerView recyclerView, int currentSnapPosition) {
         //checking if old position of the snap is different then the current one
         Boolean snapPositionChanged = this.snapPosition != currentSnapPosition;
         if (snapPositionChanged) {
             this.snapPosition = currentSnapPosition;
+            //snapPositionChange();
             TextView tvCurrentPage = findViewById(R.id.tvCurrentCardNumber);
             if(this.snapPosition == 0){     //full access
                 tvCurrentPage.setText("1");
@@ -233,7 +271,7 @@ public class MembershipActivity extends AppCompatActivity implements MembershipA
 //                    });
             }
         }
-    }
 
+    }
 
 }
